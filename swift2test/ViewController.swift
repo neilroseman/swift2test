@@ -28,20 +28,29 @@ class ViewController: UIViewController {
         //<#properties and methods#>
         var type : TrashTypes
         // add a var for the display name of the trash
-        
+        var name: String
+        var compostNames = ["banana", "pizza", "corn dog"]
+        var recycleNames = ["plastic", "glass", "paper"]
+        var garbageNames = ["foil", "cloth", "dirt"]
+
         
         init(number :Int) {
+       let randNum = Int(arc4random_uniform(3))
         if number == 1 {
            type = TrashTypes.Compost
             //pick a compost name
-            
+           name = compostNames[randNum]
         } else if number == 2 {
             type = TrashTypes.Recycle
             // pick a recyclable
+            name = recycleNames[randNum]
+
             }
         else {
             type = TrashTypes.Garbage
             // pick a garbage
+            name = garbageNames[randNum]
+
             }
         
         }
