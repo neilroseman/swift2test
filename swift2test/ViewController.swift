@@ -22,6 +22,10 @@ class ViewController: UIViewController {
     
     var total = 0
     var correct = 0
+    var firstTime = false
+    var randNum = Int(arc4random_uniform(3)) + 1
+    var newTrash = Trash(number: 3)
+
     
     // This is a piece of trash!
     struct Trash {
@@ -60,11 +64,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let randNum = Int(arc4random_uniform(3)) + 1
-        let newTrash = Trash(number: randNum)
+        //let randNum = Int(arc4random_uniform(3)) + 1
+       // let newTrash = Trash(number: randNum)
         
         //print(newTrash.type)
-        TrashName.text = String(newTrash.type)
+        // TrashName.text = String(newTrash.type)
+        TrashName.text = "Click a button to start";
+      //  total = total - 1;
+        firstTime = true
+       
+    
+    
+    
+    
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,18 +88,37 @@ class ViewController: UIViewController {
 
     @IBAction func TrashButtonPressed(sender: AnyObject) {
     
+        
+    if firstTime == true {
+        let title = sender.titleForState(.Normal)
+        print("Title", title)
+        print (TrashName.text)
+      if title == TrashName.text {
+            correct = correct+1
+        }
+         randNum = Int(arc4random_uniform(3)) + 1
+         newTrash = Trash(number: randNum)
+         TrashName.text = String(newTrash.name)
+        firstTime = false
+        }
+        
+    else {
         let title = sender.titleForState(.Normal)
         
+             randNum = Int(arc4random_uniform(3)) + 1
         
-        if title == TrashName.text {
+        print("Else Title", title)
+        print("Name", TrashName.text)
+        print("type", newTrash.type)
+        if title == String(newTrash.type) {
             correct = correct+1
         }
         total++
-        let randNum = Int(arc4random_uniform(3)) + 1
-        let newTrash = Trash(number: randNum)
+        newTrash = Trash(number: randNum)
+        TrashName.text = String(newTrash.name)
+
+        }
         
-        //print(newTrash.type)
-        TrashName.text = String(newTrash.type)
         totNum.text = String(total)
         correctNum.text = String(correct)
         

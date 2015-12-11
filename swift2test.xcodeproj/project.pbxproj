@@ -403,6 +403,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = swift2test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tinylittleengine.swift2test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -417,6 +418,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = swift2test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tinylittleengine.swift2test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -491,6 +493,7 @@
 				2864697B1C18DD4A0056EB31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2864697C1C18DD4A0056EB31 /* Build configuration list for PBXNativeTarget "swift2testTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +502,7 @@
 				2864697E1C18DD4A0056EB31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2864697F1C18DD4A0056EB31 /* Build configuration list for PBXNativeTarget "swift2testUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +511,7 @@
 				286469811C18DD4A0056EB31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
