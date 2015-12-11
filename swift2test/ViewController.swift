@@ -105,8 +105,8 @@ class ViewController: UIViewController {
         
     if firstTime == true {
         let title = sender.titleForState(.Normal)
-        print("Title", title)
-        print (TrashName.text)
+      //  print("Title", title)
+      //  print (TrashName.text)
       if title == TrashName.text {
             correct = correct+1
         }
@@ -121,9 +121,9 @@ class ViewController: UIViewController {
         
              randNum = Int(arc4random_uniform(3)) + 1
         
-        print("Else Title", title)
-        print("Name", TrashName.text)
-        print("type", newTrash.type)
+     //   print("Else Title", title)
+     //   print("Name", TrashName.text)
+     //   print("type", newTrash.type)
         if title == String(newTrash.type) {
             correct = correct+1
   //          playSound("/System/Library/Sounds/Ping.aiff")
