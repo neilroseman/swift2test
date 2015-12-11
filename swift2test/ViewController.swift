@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -25,6 +26,8 @@ class ViewController: UIViewController {
     var firstTime = false
     var randNum = Int(arc4random_uniform(3)) + 1
     var newTrash = Trash(number: 3)
+    var ding:AVAudioPlayer = AVAudioPlayer()
+
 
     
     // This is a piece of trash!
@@ -88,6 +91,17 @@ class ViewController: UIViewController {
 
     @IBAction func TrashButtonPressed(sender: AnyObject) {
     
+        func playSound(soundName: String)
+        {
+            let coinSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(soundName, ofType: "aiff")!)
+            do{
+                let audioPlayer = try AVAudioPlayer(contentsOfURL:coinSound)
+                audioPlayer.prepareToPlay()
+                audioPlayer.play()
+            }catch {
+                print("Error getting the audio file")
+            }
+        }
         
     if firstTime == true {
         let title = sender.titleForState(.Normal)
@@ -112,6 +126,7 @@ class ViewController: UIViewController {
         print("type", newTrash.type)
         if title == String(newTrash.type) {
             correct = correct+1
+  //          playSound("/System/Library/Sounds/Ping.aiff")
         }
         total++
         newTrash = Trash(number: randNum)
