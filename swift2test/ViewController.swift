@@ -36,14 +36,15 @@ class ViewController: UIViewController {
         var type : TrashTypes
         // add a var for the display name of the trash
         var name: String
-        var compostNames = ["banana", "pizza", "corn dog"]
-        var recycleNames = ["plastic", "glass", "paper"]
-        var garbageNames = ["foil", "cloth", "dirt"]
+        var compostNames = ["Banana", "Pizza", "Corn dog", "Lettuce", "Egg Shells", "Apple Core"]
+        var recycleNames = ["Foil Trays (flattened)", "Glass Bottle", "Phone Book", "Cardboard Box", "Newpaper", "Aluminum Can" ]
+        var garbageNames = ["CD", "Cloth", "Dirt", "DVDs", "Animal Waste", "Ceramics"]
 
         
         init(number :Int) {
-       let randNum = Int(arc4random_uniform(3))
-        if number == 1 {
+       let randNum = Int(arc4random_uniform(6))
+ 
+            if number == 1 {
            type = TrashTypes.Compost
             //pick a compost name
            name = compostNames[randNum]
